@@ -46,78 +46,11 @@ function generatePassword() {
   confirmUppercase = confirm("would you like to use Uppercase letters?");
   }
   
+  // Added alert for Negative confirm input
   if (!confirmNumber && !confirmCharacter && !confirmLowercase && !confirmUppercase) {
     alert("Please select one of the following (Special character, number, lowercase letters, uppercase letters!!!!")
   }
-  
   // each confirm stores to variable
-  else if (confirmCharacter && confirmNumber && confirmLowercase && confirmUppercase) {
-    passwordStr = specialChar.concat(numbers, lowercaseAlpha, uppercaseAlpha);
-  }
 
-  else if (confirmCharacter && confirmNumber && confirmLowercase) {
-    passwordStr = specialChar.concat(numbers, lowercaseAlpha);
-  }
-
-  else if (confirmCharacter && confirmUppercase && confirmLowercase) {
-    passwordStr = specialChar.concat(uppercaseAlpha, lowercaseAlpha);
-  }
-
-  else if (confirmCharacter && confirmNumber && confirmLowercase) {
-    passwordStr = specialChar.concat(numbers, lowercase);
-  }
-
-  else if (confirmCharacter && confirmNumber && confirmLowercase) {
-    passwordStr = specialChar.concat(numbers, lowercase);
-  }
-
-  else if (confirmCharacter && confirmNumber) {
-    passwordStr = specialChar.concat(numbers);
-  }
-
-  else if (confirmUppercase && confirmNumber) {
-    passwordStr = uppercaseAlpha.concat(numbers);
-  }
-
-  else if (confirmLowercase && confirmNumber) {
-    passwordStr = lowercaseAlpha.concat(numbers);
-  }
-
-  else if (confirmCharacter && confirmLowercase) {
-    passwordStr = specialChar.concat(lowercaseAlpha);
-  }
-
-  else if (confirmCharacter && confirmUppercase) {
-    passwordStr = specialChar.concat(uppercaseAlpha);
-  }
-  
-  else if (confirmLowercase && confirmUppercase) {
-    passwordStr = lowercaseAlpha.concat(uppercaseAlpha);
-  }
- 
-  else if (confirmCharacter) {
-    passwordStr = specialChar;
-  }
-
-  else if (confirmNumber) {
-    passwordStr = numbers;
-  }
-
-  else if (confirmUppercase) {
-    passwordStr = uppercaseAlpha;
-  }
-
-  else if (confirmLowercase) {
-    passwordStr = lowercaseAlpha;
-  }
-
-  var password = [];
-
-  for(var i = 0; i < passwordLength; i++) {
-    var newPassword = passwordStr[Math.floor(Math.random() * passwordStr.length)];
-    password += (newPassword);
-  }
-  return password;
 }
-
 // generate random number as index to the pool 
