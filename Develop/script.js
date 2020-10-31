@@ -14,11 +14,11 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // Add variables for confirm prompts
-var confirmNumber;
-var confirmCharacter;
-var confirmUppercase;
-var confirmLowercase;
-var passwordLength;
+var confirmNumber = 0;
+var confirmCharacter = 0;
+var confirmUppercase = 0;
+var confirmLowercase = 0;
+var passwordLength = 0;
 // based on prompts create a pool(array or string) of characterset
 var passwordStr;
 
@@ -31,6 +31,7 @@ var specialChar = ["!", "#", "$", "%", "&", "(", ")", "+", "*", ",", "/", "@", "
 
 function generatePassword() {
   // ask user length of password
+  while (passwordLength == 0)
   passwordLength = prompt("How many character would you like your password between 8 - 128");
 
  // check the length meeting minimum requirement 
@@ -110,5 +111,13 @@ function generatePassword() {
   else if (confirmLowercase) {
     passwordStr = lowercaseAlpha;
   }
+
+  // generate random number as index to the pool 
+  var password = [];
+
+  for(var i = 0; i < passwordLength; i++) {
+    var newPassword = passwordStr[Math.floor(Math.random() * passwordStr.length)];
+    password += (newPassword);
+  }
+  return password;
 }
-// generate random number as index to the pool 
