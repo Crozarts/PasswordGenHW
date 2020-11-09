@@ -23,3 +23,6 @@ SO THAT I can create a strong password that provides greater security
 
 
 #### Links
+
+1. https://crozarts.github.io/PasswordGenHW/
+2. https://github.com/Crozarts/PasswordGenHW/
